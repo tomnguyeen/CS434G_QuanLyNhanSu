@@ -1,0 +1,88 @@
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
+
+/* HEADER */
+.header {
+  background:#3bb4f7;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+}
+.header .title {font-weight: bold; font-size:20px;}
+.header .user {font-size:14px;}
+.header .user a {color:orange; text-decoration:none;}
+
+/* LAYOUT */
+.container {display:flex;}
+
+/* SIDEBAR */
+.sidebar {
+  width:220px;
+  background:#000;
+  min-height:100vh;
+  padding:20px 10px;
+}
+.sidebar ul {list-style:none;}
+.sidebar li {margin:6px 0;}
+.sidebar a {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
+  padding:8px 15px;
+  text-decoration:none;
+  border-radius:5px;
+}
+.sidebar li.active a,
+.sidebar a:hover {background:#3bb4f7;}
+
+/* CONTENT */
+.content {flex:1; padding:30px;}
+.content h2 {
+  text-align:center;
+  font-size:28px;
+  color:#3bb4f7;
+  margin-bottom:20px;
+}
+
+/* FORM BOX */
+.form-box {
+  border:2px solid #000;
+  padding:30px;
+  max-width:800px;
+  margin:0 auto;
+}
+.form-row {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom:30px;
+}
+.field {display:flex; justify-content:flex-start;}
+.field.right {justify-content:flex-end;}
+
+/* LABEL (giống trong ảnh) */
+.label {
+  background:#dcdcdc;
+  padding:8px 20px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+/* ACTION BUTTONS */
+.form-actions {
+  text-align:center;
+  margin-top:20px;
+}
+.btn {
+  background:#3bb4f7;
+  border:none;
+  color:white;
+  padding:8px 25px;
+  margin:0 10px;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.btn:hover {background:#339fd1;}
