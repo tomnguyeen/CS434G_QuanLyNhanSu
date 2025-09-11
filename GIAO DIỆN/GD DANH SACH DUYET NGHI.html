@@ -1,0 +1,61 @@
+from IPython.display import display, HTML
+
+html_code_manager = """
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Danh sách yêu cầu nghỉ phép</title>
+<style>
+body {font-family:Arial, sans-serif; background:#f4f6f9; margin:0;}
+header {background:#007bff; color:white; padding:15px; text-align:center;}
+.container {max-width:900px; margin:25px auto; padding:0 20px;}
+.card {background:white; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.card h2 {margin-top:0; color:#007bff;}
+table {width:100%; border-collapse:collapse; margin-top:10px;}
+th, td {padding:12px; border-bottom:1px solid #ddd; text-align:left;}
+th {background:#007bff; color:white;}
+.status {font-weight:bold; padding:4px 8px; border-radius:6px; font-size:12px;}
+.Pending {background:#fff3cd; color:#8a6d00;}
+.Approved {background:#eaf7ef; color:#126b3c;}
+.Rejected {background:#f8d7da; color:#721c24;}
+button {padding:6px 12px; border-radius:6px; border:none; cursor:pointer;}
+.ok{background:#007bff; color:white;}
+.ok:hover{background:#007bff;}
+.danger{background:#e45757; color:white;}
+.danger:hover{background:#c03c3c;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📝 Danh sách yêu cầu nghỉ phép</h1>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Yêu cầu nghỉ phép</h2>
+    <table>
+      <tr>
+        <th>Nhân viên</th>
+        <th>Loại nghỉ</th>
+        <th>Từ ngày</th>
+        <th>Đến ngày</th>
+        <th>Trạng thái</th>
+        <th>Thao tác</th>
+      </tr>
+      <tr>
+        <td>Nguyễn Văn A</td>
+        <td>Phép năm</td>
+        <td>05/09/2025</td>
+        <td>06/09/2025</td>
+        <td><span class="status Pending">Pending</span></td>
+        <td><button class="ok">Duyệt</button> <button class="danger">Từ chối</button></td>
+      </tr>
+      <tr>
+        <td>Trần Thị B</td>
+        <td>Nghỉ ốm</td>
+        <td>03/09/2025</td>
+        <td>03/09/2025</td>
+        <td><span class="status Approved">Approved</span></td>
+        <td><button class="ok">

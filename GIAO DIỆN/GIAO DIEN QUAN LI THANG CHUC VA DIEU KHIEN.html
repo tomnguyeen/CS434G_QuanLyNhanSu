@@ -1,0 +1,82 @@
+from IPython.display import display, HTML
+
+html_code = """
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Quản lý thăng chức & điều chuyển</title>
+<style>
+body {font-family:Arial, sans-serif; background:#f4f6f9; margin:0;}
+header {background:#007bff; color:white; padding:15px;}
+.container {padding:20px;}
+form {background:white; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); margin-bottom:20px;}
+form h2 {margin-top:0; color:#007bff;}
+input, select, textarea {width:100%; padding:8px; margin:8px 0; border:1px solid #ccc; border-radius:5px;}
+button {padding:10px 15px; background:#007bff; border:none; color:white; border-radius:5px; cursor:pointer;}
+button:hover {background:#0056b3;}
+.table {background:white; padding:15px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+table {width:100%; border-collapse:collapse;}
+th, td {padding:10px; border-bottom:1px solid #ddd; text-align:left;}
+th {background:#007bff; color:white;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📋 Quản lý thăng chức & điều chuyển</h1>
+</header>
+
+<div class="container">
+
+  <form>
+    <h2>Tạo đề xuất</h2>
+    <label>Nhân viên:</label>
+    <select>
+      <option>Nguyễn Văn A - Kế toán</option>
+      <option>Trần Thị B - Nhân sự</option>
+      <option>Lê Văn C - IT</option>
+    </select>
+    <label>Loại thay đổi:</label>
+    <select>
+      <option>Thăng chức</option>
+      <option>Thay đổi bộ phận</option>
+      <option>Điều động nội bộ</option>
+    </select>
+    <label>Ngày hiệu lực:</label>
+    <input type="date">
+    <label>Lý do:</label>
+    <textarea rows="3"></textarea>
+    <button type="submit">Gửi đề xuất</button>
+  </form>
+
+  <div class="table">
+    <h2>Danh sách đề xuất</h2>
+    <table>
+      <tr>
+        <th>Nhân viên</th>
+        <th>Loại thay đổi</th>
+        <th>Ngày hiệu lực</th>
+        <th>Trạng thái</th>
+      </tr>
+      <tr>
+        <td>Nguyễn Văn A</td>
+        <td>Thăng chức</td>
+        <td>01/10/2025</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>Trần Thị B</td>
+        <td>Điều động nội bộ</td>
+        <td>15/09/2025</td>
+        <td>Approved</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+</body>
+</html>
+"""
+
+display(HTML(html_code))
