@@ -1,0 +1,88 @@
+/* Reset */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Tahoma,Arial,sans-serif}
+
+/* Nền chấm bi */
+body{
+  background:#f5f7fa;
+  background-image: radial-gradient(#d8d8d8 1px, transparent 1px);
+  background-size:20px 20px;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.forgot-container{
+  width:100%;
+  max-width:360px;
+  padding:20px;
+}
+
+.forgot-box{
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  padding:24px;
+  text-align:left;
+}
+
+.header{
+  background:#35aaf2;
+  color:#fff;
+  text-align:center;
+  padding:10px 0;
+  font-size:20px;
+  font-weight:700;
+  border-radius:8px 8px 0 0;
+  margin:-24px -24px 20px -24px; /* mở rộng ra sát viền */
+}
+
+label{
+  font-weight:600;
+  display:block;
+  margin-bottom:6px;
+  color:#222;
+}
+
+input[type="email"]{
+  width:100%;
+  padding:10px 12px;
+  border:2px solid #000;
+  border-radius:8px;
+  background:#000;
+  color:#fff;
+  margin-bottom:20px;
+}
+input::placeholder{color:#bbb}
+
+.btn-group{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.send-btn{
+  background:#35aaf2;
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:8px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition: background .2s;
+}
+.send-btn:hover{background:#1d92d4}
+
+.back-link{
+  color:#35aaf2;
+  text-decoration:none;
+  font-weight:600;
+  align-self:center;
+}
+.back-link:hover{text-decoration:underline}
+
+/* Responsive */
+@media(max-width:420px){
+  .forgot-box{padding:18px}
+}
