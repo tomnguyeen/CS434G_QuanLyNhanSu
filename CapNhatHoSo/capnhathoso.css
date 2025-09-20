@@ -34,6 +34,7 @@
   padding:8px 15px;
   text-decoration:none;
   border-radius:5px;
+  font-size:14px;
 }
 .sidebar li.active a,
 .sidebar a:hover {background:#3bb4f7;}
@@ -58,19 +59,33 @@
   display:grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom:30px;
+  gap:20px;
 }
-.field {display:flex; justify-content:flex-start;}
-.field.right {justify-content:flex-end;}
+.field {display:flex; flex-direction:column; align-items:flex-start;}
+.field.right {align-items:flex-end;}
 
-/* LABEL (giống trong ảnh) */
+/* LABEL */
 .label {
   background:#dcdcdc;
   padding:8px 20px;
   border-radius:20px;
   font-weight:600;
+  margin-bottom:8px;
 }
 
-/* ACTION BUTTONS */
+/* INPUT & SELECT */
+.field input,
+.field select {
+  padding:8px 14px;
+  border:1px solid #ccc;
+  border-radius:20px;
+  min-width:200px;
+  font-size:14px;
+}
+.field.right input,
+.field.right select {text-align:left;}
+
+/* BUTTONS */
 .form-actions {
   text-align:center;
   margin-top:20px;

@@ -37,41 +37,55 @@
     <!-- MAIN -->
     <main class="content">
       <h2>Cập nhật hồ sơ</h2>
-      <div class="form-box">
+      <form class="form-box">
         <!-- Row 1 -->
         <div class="form-row">
           <div class="field">
             <span class="label">Họ và Tên</span>
+            <input type="text" name="hoten">
           </div>
           <div class="field right">
             <span class="label">Chức vụ</span>
+            <input type="text" name="chucvu">
           </div>
         </div>
+
         <!-- Row 2 -->
         <div class="form-row">
           <div class="field">
             <span class="label">Ngày sinh</span>
+            <input type="date" name="ngaysinh">
           </div>
           <div class="field right">
             <span class="label">Phòng ban</span>
+            <input type="text" name="phongban">
           </div>
         </div>
+
         <!-- Row 3 -->
         <div class="form-row">
           <div class="field">
             <span class="label">Giới tính</span>
+            <select name="gioitinh">
+              <option value="">-- Chọn --</option>
+              <option>Nam</option>
+              <option>Nữ</option>
+              <option>Khác</option>
+            </select>
           </div>
           <div class="field right">
             <span class="label">Thông tin liên hệ</span>
+            <input type="text" name="lienhe">
           </div>
         </div>
+
         <!-- Buttons -->
         <div class="form-actions">
-          <button class="btn">Lưu</button>
-          <button class="btn">Reset</button>
-          <button class="btn">Hủy</button>
+          <button type="submit" class="btn">Lưu</button>
+          <button type="reset" class="btn">Reset</button>
+          <button type="button" class="btn">Hủy</button>
         </div>
-      </div>
+      </form>
     </main>
   </div>
 </body>
