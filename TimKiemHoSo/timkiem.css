@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #1e90ff;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+header .user-info {
+  font-size: 14px;
+}
+
+header .user-info a {
+  color: yellow;
+  text-decoration: none;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #111;
+  color: white;
+  height: calc(100vh - 60px);
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+
+.sidebar ul li a i {
+  margin-right: 8px;
+}
+
+.sidebar ul li.active,
+.sidebar ul li a:hover {
+  background-color: #333;
+  border-left: 5px solid #1e90ff;
+}
+
+/* Content */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.content h2 {
+  color: #1e90ff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content h2 i {
+  margin-right: 8px;
+}
+
+/* Search form */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+}
+
+/* Buttons */
+.buttons {
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-search {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.btn-clear {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f0f0f0;
+}

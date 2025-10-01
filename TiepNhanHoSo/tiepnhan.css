@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;   /* Sidebar và Main nằm ngang */
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #000;
+  color: #fff;
+  padding: 20px 0;
+  flex-shrink: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sidebar ul li i {
+  margin-right: 10px;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background: #333;
+  color: #00c0ff;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+
+.header {
+  background: #3bb9ff;
+  padding: 15px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h2 {
+  font-size: 20px;
+}
+
+.header .user-info a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.title {
+  text-align: center;
+  color: #3bb9ff;
+  margin: 20px 0;
+  font-size: 28px;
+}
+
+/* Table */
+.table-container {
+  background: #fff;
+  border: 2px solid #000;
+  margin: 0 40px 40px 40px;
+  padding: 15px;
+  flex: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table th, table td {
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 14px;
+}
+
+table th {
+  background: #eee;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Buttons */
+.btn {
+  padding: 6px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #3bb9ff;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}

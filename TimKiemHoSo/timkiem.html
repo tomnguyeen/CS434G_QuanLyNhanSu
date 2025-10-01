@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hệ thống quản lí nhân sự</title>
+  <link rel="stylesheet" href="timkiem.css">
+  <!-- Thư viện icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+    <div class="user-info">
+      Xin Chào, User | <a href="#">Đăng Xuất</a>
+    </div>
+  </header>
+
+  <!-- Bố cục chia 2 phần -->
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#"><i class="fa fa-home"></i> Trang chủ</a></li>
+        <li class="active"><a href="#"><i class="fa fa-id-card"></i> Hồ sơ nhân viên</a></li>
+        <li><a href="#"><i class="fa fa-file-contract"></i> Hợp đồng lao động</a></li>
+        <li><a href="#"><i class="fa fa-clock"></i> Chấm công</a></li>
+        <li><a href="#"><i class="fa fa-money-bill"></i> Bảng lương</a></li>
+        <li><a href="#"><i class="fa fa-shield-halved"></i> Bảo hiểm & Phúc lợi</a></li>
+        <li><a href="#"><i class="fa fa-calendar-check"></i> Nghỉ phép & Thời gian làm việc</a></li>
+        <li><a href="#"><i class="fa fa-graduation-cap"></i> Đào tạo & Phát triển</a></li>
+        <li><a href="#"><i class="fa fa-briefcase"></i> Tuyển dụng</a></li>
+        <li><a href="#"><i class="fa fa-chart-line"></i> Đánh giá hiệu suất</a></li>
+        <li><a href="#"><i class="fa fa-award"></i> Khen thưởng & Kỷ luật</a></li>
+        <li><a href="#"><i class="fa fa-heartbeat"></i> An toàn lao động & Sức khỏe</a></li>
+        <li><a href="#"><i class="fa fa-chart-pie"></i> Báo cáo & Thống kê</a></li>
+        <li><a href="#"><i class="fa fa-cogs"></i> Quản trị hệ thống</a></li>
+      </ul>
+    </nav>
+
+    <!-- Nội dung -->
+    <main class="content">
+      <h2><i class="fa fa-search"></i> Tìm kiếm hồ sơ</h2>
+      
+      <div class="search-box">
+        <input type="text" placeholder="Mã NV">
+        <input type="text" placeholder="Họ và Tên">
+        <input type="date" placeholder="Ngày sinh">
+        <input type="text" placeholder="Phòng ban">
+        <input type="text" placeholder="Chức vụ">
+      </div>
+
+      <div class="buttons">
+        <button class="btn-search">Tìm kiếm</button>
+        <button class="btn-clear">Xóa</button>
+      </div>
+
+      <!-- Bảng kết quả -->
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Mã NV</th>
+            <th>Họ và Tên</th>
+            <th>Ngày sinh</th>
+            <th>Chức vụ</th>
+            <th>Phòng ban</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="6" style="text-align:center;">Chưa có dữ liệu</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>
