@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phụ Cấp - Hệ thống quản lí nhân sự</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="phucap.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul>
+      <li><i class="fa fa-home"></i> Trang chủ</li>
+      <li><i class="fa fa-id-card"></i> Hồ sơ nhân viên</li>
+      <li><i class="fa fa-file-contract"></i> Hợp đồng lao động</li>
+      <li><i class="fa fa-clock"></i> Chấm công</li>
+      <li class="active"><i class="fa fa-money-bill"></i> Bảng lương</li>
+      <li><i class="fa fa-shield"></i> Bảo hiểm & Phúc lợi</li>
+      <li><i class="fa fa-calendar"></i> Nghỉ phép & Thời gian làm việc</li>
+      <li><i class="fa fa-exchange-alt"></i> Thăng chức & Điều chuyển</li>
+      <li><i class="fa fa-graduation-cap"></i> Đào tạo & Phát triển</li>
+      <li><i class="fa fa-users"></i> Tuyển dụng</li>
+      <li><i class="fa fa-star"></i> Đánh giá hiệu suất</li>
+      <li><i class="fa fa-gavel"></i> Khen thưởng & Kỷ luật</li>
+      <li><i class="fa fa-heartbeat"></i> An toàn lao động & Sức khỏe</li>
+      <li><i class="fa fa-database"></i> Báo cáo & Thống kê</li>
+      <li><i class="fa fa-cogs"></i> Quản trị hệ thống</li>
+    </ul>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <!-- Header -->
+    <div class="header">
+      <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+      <p>Xin Chào, User | <a href="#">Đăng Xuất</a></p>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h2><i class="fa fa-coins"></i> Phụ Cấp</h2>
+
+      <!-- Form chọn phụ cấp -->
+      <div class="form-group">
+        <label>Loại phụ cấp</label>
+        <input type="text" value="Ăn trưa">
+      </div>
+
+      <div class="form-group">
+        <label>Số tiền phụ cấp</label>
+        <input type="text" value="300,000">
+      </div>
+
+      <!-- Bảng phụ cấp -->
+      <table>
+        <thead>
+          <tr>
+            <th>Mã NV</th>
+            <th>Họ tên</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NV 01</td>
+            <td>Nguyễn Thị A</td>
+          </tr>
+          <tr>
+            <td>NV 02</td>
+            <td>Trần Thị B</td>
+          </tr>
+          <tr>
+            <td>NV 03</td>
+            <td>Lê Văn C</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
