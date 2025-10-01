@@ -1,0 +1,248 @@
+    <!doctype html>
+    <html lang="vi">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HRM - Đăng nhập</title>
+    <style>
+        :root{
+        --primary:#45c3ff;         /* xanh header */
+        --bg:#f7f9fc;               /* nền nhạt */
+        --dot:#e6eef7;              /* chấm nền */
+        --text:#1b2a41;
+        --muted:#5f6b7a;
+        --radius:14px;
+        }
+
+        *{box-sizing:border-box}
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(#e6eef7 1px, transparent 1px),
+        #f7f9fc;
+    background-size: 16px 16px, auto;
+
+    display: grid;
+    place-items: center;   /* căn giữa ngang + dọc */
+    min-height: 100vh;     /* cao bằng toàn màn hình */
+    }
+
+
+        .container{
+    width: min(1100px, 100%);
+    display: grid;
+
+    /* 1 cột vì chỉ hiện 1 card */
+    grid-template-columns: 1fr;
+
+    /* Căn giữa card trong container */
+    justify-items: center;   /* ngang */
+    align-content: center;   /* dọc khi container cao */
+
+    gap: 48px;
+    min-height: 100vh;       /* để căn giữa theo chiều dọc */
+    }
+
+        .card{
+        background:#fff;
+        border-radius:var(--radius);
+        box-shadow: 0 8px 24px rgba(0,0,0,.06);
+        overflow:hidden;
+        border:1px solid #eef2f7;
+        }
+
+        .card__header{
+        background:var(--primary);
+        color:#fff;
+        padding:18px 22px;
+        font-size:22px;
+        font-weight:800;
+        display:flex;
+        align-items:center;
+        gap:10px;
+        }
+        .card__sub{
+        color:#eaf6ff;
+        font-weight:500;
+        font-size:14px;
+        margin-top:4px;
+        }
+
+        .card__body{
+        padding:22px;
+        }
+
+        label{
+        display:block;
+        font-size:15px;
+        margin-bottom:8px;
+        }
+        .input{
+        width:100%;
+        padding:14px 16px;
+        border:1.5px solid #e1e8f0;
+        border-radius:12px;
+        outline:none;
+        font-size:15px;
+        transition:.2s border-color, .2s box-shadow;
+        background:#fff;
+        }
+        .input:focus{
+        border-color:#9edcff;
+        box-shadow:0 0 0 4px #e7f6ff;
+        }
+
+        .row{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+
+        .muted{ color:var(--muted); font-size:14px; }
+
+        .actions{ margin-top:18px; }
+
+        .btn{
+        display:inline-block;
+        border:none;
+        padding:14px 22px;
+        border-radius:12px;
+        background:#3db5ff;
+        color:#fff;
+        font-weight:700;
+        font-size:16px;
+        cursor:pointer;
+        transition:transform .02s ease, filter .15s ease;
+        }
+        .btn:active{ transform:translateY(1px); }
+        .btn--ghost{
+        background:transparent;
+        color:#2d8dd9;
+        text-decoration:underline;
+        padding:8px 0;
+        }
+
+        .checkbox{
+        display:flex; align-items:center; gap:10px; font-size:14px; color:var(--text);
+        user-select:none;
+        }
+
+        /* Password field with toggle eye */
+        .password-wrap{
+        position:relative;
+        }
+        .toggle-eye{
+        position:absolute;
+        right:10px; top:50%;
+        transform:translateY(-50%);
+        width:36px; height:36px;
+        border-radius:10px;
+        border:1px solid #e1e8f0;
+        background:#fff;
+        display:grid; place-items:center;
+        cursor:pointer;
+        font-size:16px;
+        }
+        .hint{ font-size:13px; color:var(--muted); margin-top:6px; }
+
+        /* Visibility control for panels */
+        .hidden{ display:none; }
+
+        /* Responsive */
+        @media (max-width: 900px){
+        .container{ grid-template-columns:1fr; }
+        }
+    </style>
+    </head>
+    <body>
+
+    <div class="container">
+        <!-- Đăng nhập -->
+        <section id="loginCard" class="card">
+        <div class="card__header">
+            <span>🔒 Đăng nhập hệ thống HRM</span>
+        </div>
+        <div class="card__body">
+            <p class="card__sub">Vui lòng đăng nhập tài khoản để tiếp tục</p>
+
+            <div class="field">
+            <label for="username">Tên đăng nhập</label>
+            <input id="username" class="input" type="text" placeholder="vd: nguyenvanA" autocomplete="username">
+            </div>
+
+            <div class="field" style="margin-top:14px">
+            <label for="password">Mật khẩu</label>
+            <div class="password-wrap">
+                <input id="password" class="input" type="password" placeholder="••••••••" autocomplete="current-password">
+                <button type="button" class="toggle-eye" aria-label="Hiện/ẩn mật khẩu" id="togglePassword">👁</button>
+            </div>
+            </div>
+
+            <div class="row" style="margin-top:12px">
+            <label class="checkbox">
+                <input id="remember" type="checkbox"> Ghi nhớ đăng nhập
+            </label>
+
+            <a href="#" id="linkForgot" class="btn--ghost">Quên mật khẩu</a>
+            </div>
+
+            <div class="actions">
+            <button class="btn" id="btnLogin">Đăng nhập</button>
+            </div>
+
+        </div>
+        </section>
+
+        <!-- Quên mật khẩu -->
+        <section id="forgotCard" class="card hidden">
+        <div class="card__header">
+            <span>Quên mật khẩu</span>
+        </div>
+        <div class="card__body">
+            <div class="field">
+            <label for="email">Nhập email của bạn:</label>
+            <input id="email" class="input" type="email" placeholder="you@example.com" autocomplete="email">
+            </div>
+
+            <div class="row actions">
+            <button class="btn" id="btnSend">Gửi yêu cầu</button>
+            <a href="#" id="linkBack" class="btn--ghost">Quay lại đăng nhập</a>
+            </div>
+
+            <p class="hint">* Chúng tôi sẽ gửi liên kết đặt lại mật khẩu vào email.</p>
+        </div>
+        </section>
+    </div>
+
+    <script>
+        // Toggle hiển/ẩn mật khẩu
+        const pwd = document.getElementById('password');
+        document.getElementById('togglePassword').addEventListener('click', () => {
+        const isPwd = pwd.type === 'password';
+        pwd.type = isPwd ? 'text' : 'password';
+        });
+
+        // Chuyển đổi giữa 2 card
+        const loginCard  = document.getElementById('loginCard');
+        const forgotCard = document.getElementById('forgotCard');
+        document.getElementById('linkForgot').addEventListener('click', (e)=>{
+        e.preventDefault();
+        loginCard.classList.add('hidden');
+        forgotCard.classList.remove('hidden');
+        });
+        document.getElementById('linkBack').addEventListener('click', (e)=>{
+        e.preventDefault();
+        forgotCard.classList.add('hidden');
+        loginCard.classList.remove('hidden');
+        });
+
+        // Demo xử lý nút (chưa có backend)
+        document.getElementById('btnLogin').addEventListener('click', ()=>{
+        alert('Đăng nhập (demo): bạn có thể nối API sau.');
+        });
+        document.getElementById('btnSend').addEventListener('click', ()=>{
+        const email = document.getElementById('email').value.trim();
+        if(!email) return alert('Vui lòng nhập email.');
+        alert('Đã gửi yêu cầu reset mật khẩu tới: ' + email + ' (demo).');
+        });
+    </script>
+    </body>
+    </html>
