@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lí Nhân Sự - Thời Hạn Hợp Đồng</title>
+    <link rel="stylesheet" href="thoihanhd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="menu-item">
+                <i class="fas fa-home"></i>
+                <span>Trang chủ</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-user"></i>
+                <span>Hồ sơ nhân viên</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-file-contract"></i>
+                <span>Hợp đồng, tạm ứng</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-clock"></i>
+                <span>Chấm công</span>
+            </div>
+            <div class="menu-item active">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Bảng lương</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Báo cáo KT & Phúc lợi</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Nghỉ phép & Báo cáo lương</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Đào tạo & Phát triển</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-bullhorn"></i>
+                <span>Tuyển dụng</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-star"></i>
+                <span>Đánh giá hiệu quả</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-award"></i>
+                <span>Khen thưởng & Kỷ luật</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-hard-hat"></i>
+                <span>An toàn lao động & Sức khỏe</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Báo cáo & Thống kê</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Quản trị hệ thống</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+                <div class="user-info">
+                    <span>Xin Chào, User1</span>
+                    <a href="#" class="logout">Đăng Xuất</a>
+                </div>
+            </header>
+
+            <div class="content">
+                <h2>Thời Hạn Hợp Đồng</h2>
+
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm">
+                </div>
+
+                <table class="contract-table">
+                    <thead>
+                        <tr>
+                            <th>Mã nhân viên</th>
+                            <th>Họ tên</th>
+                            <th>Ngày bắt đầu</th>
+                            <th>Ngày kết thúc</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NV001</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>01/01/2020</td>
+                            <td>31/12/2024</td>
+                            <td><span class="status status-active">Còn hiệu lực</span></td>
+                        </tr>
+                        <tr>
+                            <td>NV002</td>
+                            <td>Trần Thị B</td>
+                            <td>15/03/2021</td>
+                            <td>14/03/2024</td>
+                            <td><span class="status status-expiring">Sắp hết hạn</span></td>
+                        </tr>
+                        <tr>
+                            <td>NV003</td>
+                            <td>Lê Văn C</td>
+                            <td>20/08/2022</td>
+                            <td>19/08/2023</td>
+                            <td><span class="status status-expired">Hết hạn</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="action-buttons">
+                    <button class="btn-secondary">Thêm mới hợp đồng</button>
+                    <button class="btn-primary">Xuất Excel</button>
+                    <button class="btn-primary">Xuất PDF</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

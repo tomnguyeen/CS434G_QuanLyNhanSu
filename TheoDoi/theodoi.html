@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Lí Nhân Sự</title>
+    <link rel="stylesheet" href="theodoi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="menu-item">
+                <i class="fas fa-home"></i>
+                <span>Trang chủ</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-user"></i>
+                <span>Hồ sơ nhân viên</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-file-contract"></i>
+                <span>Hợp đồng, tạm ứng</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Chấm công</span>
+            </div>
+            <div class="menu-item active">
+                <i class="fas fa-clock"></i>
+                <span>Bảng lương</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Báo cáo Kế Toán & Phúc lợi</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Nghỉ phép & Báo cáo lương</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Thanh chức & Điều chuyển</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Đào tạo & Phát triển</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-bullhorn"></i>
+                <span>Tuyển dụng</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-star"></i>
+                <span>Đánh giá hiệu quả</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-balance-scale"></i>
+                <span>Khen thưởng & Kỷ luật</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>An toàn lao động & Sức khỏe</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Báo cáo & Thống kê</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Quản trị hệ thống</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+                <div class="user-info">
+                    <span>Xin Chào, User1</span>
+                    <a href="#" class="logout">Đăng Xuất</a>
+                </div>
+            </header>
+
+            <div class="content">
+                <h2>Theo dõi loại hợp đồng</h2>
+
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active">Hợp đồng</button>
+                    <button class="tab">Loại hợp đồng</button>
+                    <button class="tab">Thời hạn</button>
+                    <button class="tab">Trạng thái</button>
+                </div>
+
+                <table class="contract-table">
+                    <thead>
+                        <tr>
+                            <th>Hợp đồng</th>
+                            <th>Loại hợp đồng</th>
+                            <th>Thời hạn</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HD01</td>
+                            <td>Toàn thời gian</td>
+                            <td>01/01/2024<br>31/12/2024</td>
+                            <td>Gia hạn</td>
+                        </tr>
+                        <tr>
+                            <td>HD02</td>
+                            <td>Bán thời gian</td>
+                            <td>15/03/2024<br>14/09/2024</td>
+                            <td>Chấm dứt</td>
+                        </tr>
+                        <tr>
+                            <td>HD03</td>
+                            <td>Toàn thời gian</td>
+                            <td>10/05/2024<br>10/05/2025</td>
+                            <td>Đang hiệu lực</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="btn-add">In phiếu lương</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
