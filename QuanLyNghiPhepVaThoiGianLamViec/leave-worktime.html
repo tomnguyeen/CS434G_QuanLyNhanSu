@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HRM - Nghỉ phép & Thời gian làm việc</title>
+<style>
+  :root{
+    --primary:#45c3ff;
+    --sidebar:#0d0d0d;
+    --sidebar-hover:#1e1e1e;
+    --text:#1b2a41;
+    --muted:#6b7280;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color:var(--text);
+    background: radial-gradient(#e6eef7 1px, transparent 1px), #f7f9fc;
+    background-size:16px 16px;
+    height:100vh; display:flex; flex-direction:column;
+  }
+
+  /* Header */
+  header{
+    background:var(--primary);
+    color:#fff;
+    padding:14px 22px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  header h1{font-size:22px; font-weight:800}
+  header .user{font-size:15px}
+  header .user a{color:gold; text-decoration:none}
+
+  /* Layout */
+  .layout{flex:1; display:flex; overflow:hidden}
+
+  /* Sidebar */
+  .sidebar{
+    width:235px; background:var(--sidebar); color:#fff; padding:10px 0; overflow:auto;
+  }
+  .menu{list-style:none}
+  .menu > li{
+    padding:10px 18px; font-size:14px; display:flex; align-items:center; gap:8px;
+    cursor:pointer; transition:.2s background;
+  }
+  .menu > li:hover{ background:var(--sidebar-hover) }
+  .menu > li.active{ background:var(--primary); border-radius:0 24px 24px 0; font-weight:700 }
+
+  /* Submenu */
+  .submenu{ list-style:none; margin:6px 0 10px 14px; display:none; }
+  .submenu.show{ display:block; }
+  .submenu li{
+    margin:6px 0; padding:8px 12px; font-size:13px; background:#2a2a2a; border-radius:999px;
+    cursor:pointer;
+  }
+  .submenu li:hover{ background:#333 }
+  .submenu li.active{ background:var(--primary); color:#fff; }
+
+  /* Content */
+  .content{flex:1; padding:20px; overflow:auto}
+  .panel{
+    background:#d7dbe1; padding:16px; border-radius:26px;
+    border:1px solid #e7ebf1; box-shadow:0 8px 16px rgba(0,0,0,.05) inset;
+    max-width:980px; margin-bottom:18px;
+  }
+  .panel h2{color:#1c97df; font-size:18px; font-weight:800; margin-bottom:12px}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  label{display:block; font-size:14px; color:#27364a; margin-bottom:6px}
+  select, input, textarea{
+    width:100%; padding:12px 14px; border:1.6px solid #e5eaf0; border-radius:12px;
+    outline:none; font-size:14px; background:#fff;
+  }
+  select:focus, input:focus, textarea:focus{
+    border-color:#9edcff; box-shadow:0 0 0 4px #e7f6ff;
+  }
+  textarea{ min-height:68px; resize:vertical }
+  .btn{ background:#3db5ff; color:#fff; border:none; padding:12px 16px; border-radius:12px; font-weight:800; cursor:pointer }
+
+  /* Calendar (demo) */
+  .calendar{ border:1px solid #b8c1cc; border-radius:12px; overflow:hidden; background:#fff }
+  .cal-head, .cal-row{ display:grid; grid-template-columns:repeat(7,1fr) }
+  .cal-head div{ background:#1ea3f0; color:#fff; font-weight:700; text-align:center; padding:8px 0; font-size:13px }
+  .cal-row div{
+    border:1px solid #e3e8ef; text-align:center; padding:10px 0; font-size:14px;
+  }
+  .cal-row div.today{ background:#e7f5ff; font-weight:700 }
+  .cal-row div.off{ background:#ffe6e6 }
+  .cal-row div.holiday{ background:#ffefef; color:#b10000; font-weight:700 }
+
+  /* Table */
+  .table-wrap{ border-radius:14px; overflow:hidden; border:1px solid #dde3eb; background:#e7eef6 }
+  table{ width:100%; border-collapse:collapse }
+  thead th{ background:var(--primary); color:#fff; text-align:left; padding:10px 12px; font-size:14px }
+  tbody td{ padding:10px 12px; font-size:14px; color:#27364a }
+  tbody tr:nth-child(odd){ background:#f0f4f8 }
+  tbody tr:nth-child(even){ background:#e5eaf0 }
+  .status{ padding:4px 10px; border-radius:999px; font-weight:700; font-size:12px; display:inline-block }
+  .pending{ background:#fff1cc; color:#6a4b00 }
+  .approved{ background:#dbffe1; color:#0e6b2b }
+
+  /* Tabs (content switch) */
+  .tab{ display:none }
+  .tab.active{ display:block }
+
+  @media (max-width: 960px){
+    .grid2{ grid-template-columns:1fr }
+    .panel{ max-width:100% }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+  <div class="user">Xin Chào, User | <a href="#">Đăng Xuất</a></div>
+</header>
+
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul class="menu">
+      <li>🏠 Trang chủ</li>
+      <li>📂 Hồ sơ nhân viên</li>
+      <li>📑 Hợp đồng lao động</li>
+      <li>⏱️ Chấm công</li>
+      <li>💰 Bảng lương</li>
+      <li>🛡️ Bảo hiểm & Phúc lợi</li>
+
+      <!-- Mục có submenu -->
+      <li id="menuLeave" class="active" aria-expanded="true">🗓️ Nghỉ phép & Thời gian làm việc</li>
+      <ul id="submenuLeave" class="submenu show" aria-label="submenu">
+        <li data-tab="tabSchedule" class="active">Lịch làm việc & đăng kí nghỉ</li>
+        <li data-tab="tabRequests">Danh sách yêu cầu nghỉ phép</li>
+      </ul>
+
+      <li>📈 Thăng chức & Điều chuyển</li>
+      <li>🎓 Đào tạo & Phát triển</li>
+      <li>🔍 Tuyển dụng</li>
+      <li>📊 Đánh giá hiệu suất</li>
+      <li>🏅 Khen thưởng & Kỷ luật</li>
+      <li>⚕️ An toàn lao động & Sức khỏe</li>
+      <li>📑 Báo cáo & Thống kê</li>
+      <li>⚙️ Quản trị hệ thống</li>
+      <li>👤 Quản lý tài khoản</li>
+    </ul>
+  </aside>
+
+  <!-- Content -->
+  <main class="content">
+    <!-- TAB 1: Lịch làm việc & Đăng kí nghỉ -->
+    <section id="tabSchedule" class="tab active">
+      <div class="panel">
+        <h2>📅 Lịch làm việc</h2>
+        <div class="grid2" style="margin-bottom:10px">
+          <div>
+            <label>Chọn tháng</label>
+            <select>
+              <option>Tháng 9/2025</option>
+              <option>Tháng 10/2025</option>
+              <option>Tháng 11/2025</option>
+            </select>
+          </div>
+          <div>
+            <label>Chọn nhân viên</label>
+            <select>
+              <option>Trần Văn C - IT</option>
+              <option>Nguyễn Văn A - Kế toán</option>
+              <option>Trần Thị B - Nhân sự</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Lịch demo -->
+        <div class="calendar">
+          <div class="cal-head">
+            <div>CN</div><div>Thứ 2</div><div>Thứ 3</div><div>Thứ 4</div><div>Thứ 5</div><div>Thứ 6</div><div>Thứ 7</div>
+          </div>
+          <!-- Các hàng tuần (demo số ngày) -->
+          <div class="cal-row">
+            <div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div class="holiday">6</div>
+          </div>
+          <div class="cal-row">
+            <div>7</div><div>8</div><div>9</div><div class="today">10</div><div>11</div><div>12</div><div class="off">13</div>
+          </div>
+          <div class="cal-row">
+            <div class="off">14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+          </div>
+          <div class="cal-row">
+            <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div class="holiday">27</div>
+          </div>
+          <div class="cal-row">
+            <div>28</div><div>29</div><div>30</div><div>31</div><div></div><div></div><div></div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; text-align:right">
+          <button class="btn">Cập nhật lịch làm việc</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>📝 Đăng kí nghỉ phép</h2>
+        <div class="grid2">
+          <div>
+            <label>Chọn nhân viên</label>
+            <select id="lv-emp">
+              <option>Mai Văn C</option>
+              <option>Nguyễn Văn A</option>
+              <option>Trần Thị B</option>
+            </select>
+          </div>
+          <div>
+            <label>Loại nghỉ</label>
+            <select id="lv-type">
+              <option>Phép năm</option>
+              <option>Nghỉ ốm</option>
+              <option>Nghỉ không lương</option>
+            </select>
+          </div>
+          <div>
+            <label>Từ ngày</label>
+            <input id="lv-from" type="date">
+          </div>
+          <div>
+            <label>Đến ngày</label>
+            <input id="lv-to" type="date">
+          </div>
+          <div style="grid-column:1 / -1">
+            <label>Lí do</label>
+            <textarea id="lv-reason" placeholder="Mô tả ngắn gọn lí do..."></textarea>
+          </div>
+        </div>
+        <div style="margin-top:12px; text-align:right">
+          <button id="btnLeave" class="btn">Gửi yêu cầu nghỉ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Danh sách yêu cầu nghỉ phép -->
+    <section id="tabRequests" class="tab">
+      <div class="panel" style="background:#e7eef6">
+        <h2>📄 Danh  sách yêu cầu nghỉ phép</h2>
+        <div class="table-wrap" style="margin-top:10px">
+          <table>
+            <thead>
+              <tr>
+                <th>Nhân viên</th>
+                <th>Loại nghỉ</th>
+                <th>Từ ngày</th>
+                <th>Đến ngày</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody id="reqTable">
+              <tr>
+                <td>Nguyễn Văn A</td>
+                <td>Phép năm</td>
+                <td>2025-10-01</td>
+                <td>2025-10-07</td>
+                <td><span class="status pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>Trần Thị B</td>
+                <td>Nghỉ ốm</td>
+                <td>2025-09-24</td>
+                <td>2025-09-30</td>
+                <td><span class="status approved">Approved</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  // Toggle submenu mở/đóng
+  const menuLeave = document.getElementById('menuLeave');
+  const submenu = document.getElementById('submenuLeave');
+  menuLeave.addEventListener('click', () => {
+    const show = !submenu.classList.contains('show');
+    submenu.classList.toggle('show', show);
+    menuLeave.setAttribute('aria-expanded', show ? 'true' : 'false');
+  });
+
+  // Chuyển tab theo submenu
+  const tabButtons = submenu.querySelectorAll('li[data-tab]');
+  const tabs = document.querySelectorAll('.tab');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      tabs.forEach(t => t.classList.remove('active'));
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Demo: gửi yêu cầu nghỉ -> đẩy sang bảng ở tab Requests
+  document.getElementById('btnLeave').addEventListener('click', ()=>{
+    const emp = document.getElementById('lv-emp').value;
+    const type = document.getElementById('lv-type').value;
+    const from = document.getElementById('lv-from').value;
+    const to   = document.getElementById('lv-to').value;
+    const reason = document.getElementById('lv-reason').value.trim();
+
+    if(!from || !to){ alert('Vui lòng chọn khoảng thời gian.'); return; }
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${emp}</td>
+      <td>${type}</td>
+      <td>${from}</td>
+      <td>${to}</td>
+      <td><span class="status pending" title="${reason || 'Chờ duyệt'}">Pending</span></td>
+    `;
+    document.getElementById('reqTable').prepend(tr);
+
+    // chuyển qua tab "Danh sách yêu cầu nghỉ phép"
+    submenu.querySelector('[data-tab="tabRequests"]').click();
+
+    // reset form nhẹ
+    document.getElementById('lv-from').value='';
+    document.getElementById('lv-to').value='';
+    document.getElementById('lv-reason').value='';
+  });
+</script>
+</body>
+</html>
