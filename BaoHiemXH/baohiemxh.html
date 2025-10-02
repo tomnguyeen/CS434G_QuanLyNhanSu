@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảo hiểm xã hội</title>
+  <link rel="stylesheet" href="baohiemxh.css">
+  <!-- Font Awesome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+    <p>Xin Chào, User | <a href="#">Đăng Xuất</a></p>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><i class="fas fa-home"></i> Trang chủ</li>
+        <li><i class="fas fa-id-card"></i> Hồ sơ nhân viên</li>
+        <li><i class="fas fa-file-contract"></i> Hợp đồng lao động</li>
+        <li><i class="fas fa-clock"></i> Chấm công</li>
+        <li><i class="fas fa-money-check-alt"></i> Bảng lương</li>
+        <li class="active"><i class="fas fa-umbrella"></i> Bảo hiểm & Phúc lợi</li>
+        <li><i class="fas fa-calendar-alt"></i> Nghỉ phép & Thời gian</li>
+        <li><i class="fas fa-arrow-up"></i> Thăng chức & Điều chuyển</li>
+        <li><i class="fas fa-chalkboard-teacher"></i> Đào tạo & Phát triển</li>
+        <li><i class="fas fa-user-plus"></i> Tuyển dụng</li>
+        <li><i class="fas fa-chart-line"></i> Đánh giá hiệu suất</li>
+        <li><i class="fas fa-gift"></i> Khen thưởng & Kỷ luật</li>
+        <li><i class="fas fa-heartbeat"></i> An toàn lao động & Sức khỏe</li>
+        <li><i class="fas fa-chart-bar"></i> Báo cáo & Thống kê</li>
+        <li><i class="fas fa-cogs"></i> Quản trị hệ thống</li>
+      </ul>
+    </aside>
+
+    <!-- Nội dung -->
+    <main class="content">
+      <h2><i class="fas fa-shield-alt"></i> Bảo hiểm xã hội</h2>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="active">Bảo hiểm xã hội</button>
+        <button>Bảo hiểm y tế</button>
+        <button>Bảo hiểm thất nghiệp</button>
+      </div>
+
+      <!-- Form -->
+      <form class="form-box">
+        <div class="form-group">
+          <label for="sohopdong">Số hợp đồng</label>
+          <input type="text" id="sohopdong" value="123456">
+        </div>
+        <div class="form-group">
+          <label for="ngaybatdau">Ngày bắt đầu</label>
+          <input type="date" id="ngaybatdau" value="2024-12-31">
+        </div>
+        <div class="form-group">
+          <label for="mucdong">Mức đóng</label>
+          <input type="text" id="mucdong" value="1.600.000">
+        </div>
+        <div class="form-group">
+          <label for="lydo">Lý do</label>
+          <input type="text" id="lydo">
+        </div>
+
+        <!-- Nút -->
+        <div class="btn-group">
+          <button type="reset" class="cancel">Hủy</button>
+          <button type="submit" class="save">Lưu</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

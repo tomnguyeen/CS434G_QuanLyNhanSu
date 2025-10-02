@@ -1,0 +1,146 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Header */
+header {
+  background: #3ab0ff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 4px solid purple;
+}
+header h1 {
+  font-size: 20px;
+}
+header p {
+  font-size: 14px;
+}
+header a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #111;
+  color: white;
+  min-height: 100vh;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+  font-size: 14px;
+}
+.sidebar li i {
+  margin-right: 8px;
+}
+.sidebar li:hover,
+.sidebar li.active {
+  background: #3ab0ff;
+  color: white;
+}
+
+/* Nội dung */
+.content {
+  flex: 1;
+  padding: 30px;
+  text-align: center;
+}
+.content h2 {
+  color: #3ab0ff;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.content h2 i {
+  margin-right: 8px;
+}
+
+/* Tabs */
+.tabs {
+  margin-bottom: 20px;
+}
+.tabs button {
+  background: #f1f1f1;
+  border: none;
+  padding: 8px 16px;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+}
+.tabs button.active {
+  background: #3ab0ff;
+  color: white;
+}
+
+/* Form */
+.form-box {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 25px;
+  width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.btn-group .cancel {
+  background: #ccc;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-group .save {
+  background: #3ab0ff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-group button:hover {
+  opacity: 0.9;
+}

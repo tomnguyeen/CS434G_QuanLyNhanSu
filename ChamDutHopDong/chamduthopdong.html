@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chấm Dứt Hợp Đồng</title>
+  <link rel="stylesheet" href="chamduthopdong.css">
+  <!-- Font Awesome để dùng icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+    <p>Xin Chào, User | <a href="#">Đăng Xuất</a></p>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><i class="fas fa-home"></i> Trang chủ</li>
+        <li><i class="fas fa-id-card"></i> Hồ sơ nhân viên</li>
+        <li class="active"><i class="fas fa-file-contract"></i> Hợp đồng lao động</li>
+        <li><i class="fas fa-clock"></i> Chấm công</li>
+        <li><i class="fas fa-money-check-alt"></i> Bảng lương</li>
+        <li><i class="fas fa-umbrella"></i> Bảo hiểm & Phúc lợi</li>
+        <li><i class="fas fa-calendar-alt"></i> Nghỉ phép & Thời gian</li>
+        <li><i class="fas fa-arrow-up"></i> Thăng chức & Điều chuyển</li>
+        <li><i class="fas fa-chalkboard-teacher"></i> Đào tạo & Phát triển</li>
+        <li><i class="fas fa-user-plus"></i> Tuyển dụng</li>
+        <li><i class="fas fa-chart-line"></i> Đánh giá hiệu suất</li>
+        <li><i class="fas fa-gift"></i> Khen thưởng & Kỷ luật</li>
+        <li><i class="fas fa-heartbeat"></i> An toàn lao động & Sức khỏe</li>
+        <li><i class="fas fa-chart-bar"></i> Báo cáo & Thống kê</li>
+        <li><i class="fas fa-cogs"></i> Quản trị hệ thống</li>
+      </ul>
+    </aside>
+
+    <!-- Nội dung chính -->
+    <main class="content">
+      <h2>Chấm Dứt Hợp Đồng</h2>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button>Theo dõi loại hợp đồng</button>
+        <button>Thời hạn</button>
+        <button class="active">Chấm dứt</button>
+      </div>
+
+      <!-- Form -->
+      <form class="form-end">
+        <label for="sohd">Số hợp đồng</label>
+        <input type="text" id="sohd" value="HD123456">
+
+        <label for="ngay">Ngày chấm dứt</label>
+        <input type="date" id="ngay" value="2024-04-30">
+
+        <label for="lydo">Lý do</label>
+        <textarea id="lydo">Nhu cầu không còn</textarea>
+
+        <div class="form-buttons">
+          <button type="reset" class="cancel">Hủy</button>
+          <button type="submit" class="submit">Chấm dứt</button>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

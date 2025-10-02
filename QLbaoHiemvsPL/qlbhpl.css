@@ -1,0 +1,98 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Header */
+header {
+  background: #3ab0ff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 4px solid purple;
+}
+header h1 {
+  font-size: 20px;
+}
+header p {
+  font-size: 14px;
+}
+header a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #111;
+  color: white;
+  min-height: 100vh;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+  font-size: 14px;
+}
+.sidebar li i {
+  margin-right: 8px;
+}
+.sidebar li:hover,
+.sidebar li.active {
+  background: #3ab0ff;
+  color: white;
+}
+
+/* Nội dung */
+.content {
+  flex: 1;
+  padding: 30px;
+  text-align: center;
+}
+.content h2 {
+  color: #3ab0ff;
+  margin-bottom: 20px;
+}
+
+/* Nút chức năng */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.btn-group button {
+  background: #f1f1f1;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.btn-group button:hover {
+  background: #3ab0ff;
+  color: white;
+}
