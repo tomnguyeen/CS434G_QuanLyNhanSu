@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chế độ Thai sản</title>
+    <link rel="stylesheet" href="chedothaisan.css">
+    <!-- Thư viện icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+        <div class="user-info">
+            Xin Chào, User | <a href="#">Đăng Xuất</a>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <ul>
+            <li><i class="fa fa-home"></i> Trang chủ</li>
+            <li><i class="fa fa-id-card"></i> Hồ sơ nhân viên</li>
+            <li><i class="fa fa-file-contract"></i> Hợp đồng lao động</li>
+            <li><i class="fa fa-clock"></i> Chấm công</li>
+            <li><i class="fa fa-money-bill"></i> Bảng lương</li>
+            <li class="active"><i class="fa fa-shield-heart"></i> Bảo hiểm & Phúc lợi</li>
+            <li><i class="fa fa-calendar"></i> Nghỉ phép & Thời gian làm việc</li>
+            <li><i class="fa fa-user-tie"></i> Thăng chức & Điều chuyển</li>
+            <li><i class="fa fa-graduation-cap"></i> Đào tạo & Phát triển</li>
+            <li><i class="fa fa-briefcase"></i> Tuyển dụng</li>
+            <li><i class="fa fa-chart-line"></i> Đánh giá hiệu suất</li>
+            <li><i class="fa fa-gavel"></i> Khen thưởng & Kỷ luật</li>
+            <li><i class="fa fa-heartbeat"></i> An toàn lao động & Sức khỏe</li>
+            <li><i class="fa fa-chart-bar"></i> Báo cáo & Thống kê</li>
+            <li><i class="fa fa-cogs"></i> Quản trị hệ thống</li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <h2>Chế độ Thai sản</h2>
+
+        <div class="tab">
+            <button class="tab-btn">Bảo hiểm xã hội</button>
+            <button class="tab-btn">Bảo hiểm y tế</button>
+            <button class="tab-btn">Bảo hiểm thất nghiệp</button>
+            <button class="tab-btn active">Chế độ thai sản</button>
+        </div>
+
+        <form class="form-box">
+            <label>Số hợp đồng</label>
+            <input type="text" placeholder="Nhập số hợp đồng">
+
+            <label>Ngày bắt đầu nghỉ</label>
+            <input type="date">
+
+            <label>Ngày kết thúc nghỉ</label>
+            <input type="date">
+
+            <label>Mức trợ cấp</label>
+            <input type="text" placeholder="Nhập số tiền trợ cấp">
+
+            <label>Lý do</label>
+            <textarea rows="3" placeholder="Nhập lý do"></textarea>
+
+            <div class="form-actions">
+                <button type="button" class="cancel-btn">Hủy</button>
+                <button type="submit" class="save-btn">Lưu</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

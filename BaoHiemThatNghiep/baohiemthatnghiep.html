@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảo hiểm thất nghiệp</title>
+    <link rel="stylesheet" href="baohiemthatnghiep.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>HỆ THỐNG QUẢN LÍ NHÂN SỰ</h1>
+        <p>Xin Chào, User | <a href="#">Đăng Xuất</a></p>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul>
+                <li><i class="fa fa-home"></i> Trang chủ</li>
+                <li><i class="fa fa-id-card"></i> Hồ sơ nhân viên</li>
+                <li><i class="fa fa-file-contract"></i> Hợp đồng lao động</li>
+                <li><i class="fa fa-calendar-check"></i> Chấm công</li>
+                <li><i class="fa fa-money-bill-wave"></i> Bảng lương</li>
+                <li class="active"><i class="fa fa-shield"></i> Bảo hiểm & Phúc lợi</li>
+                <li><i class="fa fa-clock"></i> Nghỉ phép & Thời gian làm việc</li>
+                <li><i class="fa fa-arrows-rotate"></i> Thăng chức & Điều chuyển</li>
+                <li><i class="fa fa-graduation-cap"></i> Đào tạo & Phát triển</li>
+                <li><i class="fa fa-users"></i> Tuyển dụng</li>
+                <li><i class="fa fa-chart-line"></i> Đánh giá hiệu suất</li>
+                <li><i class="fa fa-award"></i> Khen thưởng & Kỷ luật</li>
+                <li><i class="fa fa-heartbeat"></i> An toàn lao động & Sức khỏe</li>
+                <li><i class="fa fa-chart-pie"></i> Báo cáo & Thống kê</li>
+                <li><i class="fa fa-cogs"></i> Quản trị hệ thống</li>
+            </ul>
+        </nav>
+
+        <!-- Content -->
+        <main class="content">
+            <h2>Bảo hiểm thất nghiệp</h2>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button onclick="location.href='baohiem_xh.html'">Bảo hiểm xã hội</button>
+                <button onclick="location.href='baohiem_yte.html'">Bảo hiểm y tế</button>
+                <button class="active">Bảo hiểm thất nghiệp</button>
+            </div>
+
+            <!-- Form -->
+            <div class="form-box">
+                <div class="form-group">
+                    <label for="sohopdong">Số hợp đồng</label>
+                    <input type="text" id="sohopdong" placeholder="VD: HD78910">
+                </div>
+
+                <div class="form-group">
+                    <label for="ngaybatdau">Ngày bắt đầu</label>
+                    <input type="date" id="ngaybatdau">
+                </div>
+
+                <div class="form-group">
+                    <label for="mucdong">Mức đóng</label>
+                    <input type="text" id="mucdong" placeholder="Nhập mức đóng...">
+                </div>
+
+                <div class="form-group">
+                    <label for="lydo">Lý do</label>
+                    <textarea id="lydo" rows="3" placeholder="Nhập lý do..."></textarea>
+                </div>
+
+                <div class="btn-group">
+                    <button class="cancel">Hủy</button>
+                    <button class="save">Lưu</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
