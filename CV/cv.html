@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HỆ THỐNG QUẢN LÝ NHÂN SỰ — CV ứng viên</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="cv.css" />
+
+  <!-- Font Awesome cho icon -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Top header -->
+  <header class="topbar">
+    <h1>HỆ THỐNG QUẢN LÝ NHÂN SỰ</h1>
+    <div class="top-actions">Xin Chào, User | <a href="#">Đăng Xuất</a></div>
+  </header>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul class="menu">
+        <li><i class="fa fa-home"></i><span>Trang chủ</span></li>
+        <li><i class="fa fa-id-card"></i><span>Hồ sơ nhân viên</span></li>
+        <li><i class="fa fa-file-contract"></i><span>Hợp đồng lao động</span></li>
+        <li><i class="fa fa-clock"></i><span>Chấm công</span></li>
+        <li><i class="fa fa-money-bill-wave"></i><span>Bảng lương</span></li>
+        <li><i class="fa fa-hand-holding-medical"></i><span>Bảo hiểm &amp; Phúc lợi</span></li>
+        <li><i class="fa fa-plane"></i><span>Nghỉ phép &amp; Thời gian</span></li>
+        <li><i class="fa fa-award"></i><span>Đào tạo &amp; Phát triển</span></li>
+        <li class="active"><i class="fa fa-users"></i><span>Tuyển dụng</span></li>
+        <li><i class="fa fa-chart-line"></i><span>Báo cáo &amp; Thống kê</span></li>
+        <li><i class="fa fa-cog"></i><span>Quản trị hệ thống</span></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <h2 class="page-title">CV ứng viên</h2>
+
+      <section class="form-container">
+        <!-- Cột trái -->
+        <div class="col left">
+          <label>Họ và Tên</label>
+          <input type="text" placeholder="Nhập họ và tên" />
+
+          <label>Ngày sinh</label>
+          <input type="date" />
+
+          <label>Địa chỉ</label>
+          <input type="text" placeholder="Ví dụ: 123 Đường ABC, Quận X" />
+
+          <label>Thông tin liên hệ</label>
+          <input type="text" placeholder="Số điện thoại / Email" />
+
+          <div class="avatar-box">
+            <div class="avatar-preview"></div>
+            <button class="btn outline">Upload Avatar</button>
+          </div>
+        </div>
+
+        <!-- Cột phải -->
+        <div class="col right">
+          <label>Trường học</label>
+          <input type="text" placeholder="Tên trường" />
+
+          <label>Chuyên ngành</label>
+          <input type="text" placeholder="Chuyên ngành" />
+
+          <button class="btn small">+ Thêm học vấn</button>
+
+          <label style="margin-top:14px">Công ty (kinh nghiệm)</label>
+          <input type="text" placeholder="Tên công ty" />
+
+          <label>Vị trí</label>
+          <input type="text" placeholder="Vị trí công việc" />
+
+          <button class="btn small">+ Thêm kinh nghiệm</button>
+
+          <label style="margin-top:14px">Danh sách kĩ năng</label>
+          <input type="text" placeholder="Kĩ năng (VD: Java, Excel...)" />
+
+          <label>Chứng chỉ / Bằng cấp</label>
+          <div class="row-inline">
+            <input type="text" placeholder="Tên chứng chỉ" />
+            <button class="btn">Upload</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upload CV (giữa) -->
+      <section class="upload-cv">
+        <label>Họ và Tên (lặp)</label>
+        <input type="text" placeholder="Nhập họ và tên" />
+        <button class="btn">Upload file CV</button>
+      </section>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="btn primary">Nộp CV</button>
+        <button class="btn success">Lưu nháp</button>
+        <button class="btn danger">Hủy</button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

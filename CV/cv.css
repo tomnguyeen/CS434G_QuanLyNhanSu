@@ -1,0 +1,177 @@
+/* Reset nhẹ */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: "Arial", sans-serif; }
+
+/* Topbar (đã sửa tên sang "HỆ THỐNG QUẢN LÝ NHÂN SỰ") */
+.topbar{
+  position: relative;
+  height: 76px;
+  background: linear-gradient(180deg,#5cc3ff,#35a8ea);
+  color: #fff;
+  display:block;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+}
+
+/* tiêu đề chính ở giữa */
+.topbar h1{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* phần xin chào, đăng xuất ở phải */
+.top-actions{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+.top-actions a{ color: #fff; text-decoration: underline; }
+
+/* Layout chính */
+.app{
+  display: flex;
+  min-height: calc(100vh - 76px);
+  background: #f6f8fb;
+}
+
+/* Sidebar */
+.sidebar{
+  width: 240px;
+  background: #0e0e0f;
+  color: #fff;
+  padding: 18px 12px;
+}
+.menu{ list-style:none; }
+.menu li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:8px;
+  margin-bottom:6px;
+  cursor:pointer;
+  font-size:14px;
+}
+.menu li i{ width:20px; text-align:center; }
+.menu li:hover, .menu li.active{
+  background: rgba(255,255,255,0.04);
+}
+
+/* Main content */
+.main{
+  flex: 1;
+  padding: 28px;
+}
+
+/* Page title (CV ứng viên) */
+.page-title{
+  text-align:center;
+  color:#078ed6;
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+/* Form Grid */
+.form-container{
+  display:flex;
+  gap:28px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.col{
+  width: 50%;
+  display:flex;
+  flex-direction:column;
+}
+label{
+  margin-top:8px;
+  margin-bottom:6px;
+  font-size:13px;
+  color:#333;
+}
+input[type="text"], input[type="date"]{
+  padding:10px 12px;
+  border-radius:20px;
+  border:1px solid #d6dbe6;
+  background:white;
+  outline:none;
+  transition: box-shadow .12s;
+}
+input[type="text"]:focus, input[type="date"]:focus{ box-shadow:0 0 0 3px rgba(3,140,200,0.08); }
+
+/* Avatar area */
+.avatar-box{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:12px;
+}
+.avatar-preview{
+  width:90px;
+  height:90px;
+  border-radius:10px;
+  border:3px solid #111;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:14px;
+  border: none;
+  cursor:pointer;
+  background:#00aaff;
+  color:#fff;
+  font-size:13px;
+}
+.btn.small{ padding:6px 10px; border-radius:12px; font-size:12px; }
+.btn.outline{
+  background:#fff;
+  color:#00aaff;
+  border:2px solid #111;
+}
+.btn.primary{ background:#00aaff; }
+.btn.success{ background:#00c46f; }
+.btn.danger{ background:#ff5a5a; }
+
+/* inline row (input + upload) */
+.row-inline{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.row-inline input{ flex:1; }
+
+/* Upload CV area */
+.upload-cv{
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.upload-cv input{ width:320px; }
+
+/* action buttons center */
+.actions{
+  margin-top:22px;
+  text-align:center;
+  display:flex;
+  gap:18px;
+  justify-content:center;
+}
+
+/* Responsive nhỏ */
+@media (max-width:900px){
+  .form-container{ flex-direction:column; }
+  .col{ width:100%; }
+  .sidebar{ display:none; } /* ẩn sidebar cho mobile */
+  .topbar h1{ font-size:18px; }
+}
